@@ -1,0 +1,125 @@
+@@ .. @@
++.app-container {
++  min-height: 100vh;
++  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
++}
++
+ .app {
+-  text-align: center;
++  max-width: 1400px;
++  margin: 0 auto;
++  padding: 20px;
++  min-height: calc(100vh - 70px);
++}
++
++.app-header {
++  text-align: center;
++  margin-bottom: 30px;
++  position: relative;
++}
++
++.app-title {
++  font-size: 2.5rem;
++  font-weight: 800;
++  color: #333;
++  margin-bottom: 10px;
++  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
++}
++
++.app-subtitle {
++  font-size: 1.2rem;
++  color: #666;
++  margin-bottom: 20px;
++  font-weight: 400;
++}
++
++.add-service-btn {
++  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
++  color: white;
++  border: none;
++  padding: 12px 24px;
++  border-radius: 25px;
++  font-size: 1rem;
++  font-weight: 600;
++  cursor: pointer;
++  transition: all 0.3s ease;
++  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
++  animation: pulse 2s infinite;
++}
++
++@keyframes pulse {
++  0% { transform: scale(1); }
++  50% { transform: scale(1.05); }
++  100% { transform: scale(1); }
++}
++
++.add-service-btn:hover {
++  transform: translateY(-3px);
++  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
++  animation: none;
++}
++
++.main-content {
++  display: grid;
++  grid-template-columns: 400px 1fr;
++  gap: 20px;
++  height: calc(100vh - 250px);
++  min-height: 600px;
++}
++
++.providers-section {
++  background: white;
++  border-radius: 20px;
++  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
++  overflow: hidden;
++  display: flex;
++  flex-direction: column;
++}
++
++.map-section {
++  background: white;
++  border-radius: 20px;
++  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
++  overflow: hidden;
++}
++
++@media (max-width: 1024px) {
++  .main-content {
++    grid-template-columns: 1fr;
++    grid-template-rows: 400px 1fr;
++    height: auto;
++    min-height: auto;
++  }
++  
++  .providers-section {
++    order: 2;
++  }
++  
++  .map-section {
++    order: 1;
++    height: 400px;
++  }
++}
++
++@media (max-width: 768px) {
++  .app {
++    padding: 15px;
++  }
++  
++  .app-title {
++    font-size: 2rem;
++  }
++  
++  .app-subtitle {
++    font-size: 1rem;
++  }
++  
++  .main-content {
++    gap: 15px;
++  }
++  
++  .providers-section,
++  .map-section {
++    border-radius: 15px;
++  }
+ }

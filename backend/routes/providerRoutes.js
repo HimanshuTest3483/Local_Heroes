@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const Provider = require('../models/Providers');
+const auth = require('../middleware/auth');
 
 // GET /api/providers - Fetches all providers or filters by category
 router.get('/', async (req, res) => {
@@ -15,10 +16,13 @@ router.get('/', async (req, res) => {
   }
 });
 
-// POST /api/providers - Adds a new provider
-router.post('/', async (req, res) => {
+// POST /api/providers - Adds a new provider (protected route)
+router.post('/', auth, async (req, res) => {
   try {
-    const newProvider = new Provider(req.body);
+    const newProvider = new Provider({
+      ...req.body,
+      addedBy: req.user._id,
+    });
     const savedProvider = await newProvider.save();
     res.status(201).json(savedProvider);
   } catch (err) {
