@@ -60,6 +60,7 @@ const Register = () => {
         
         <form onSubmit={handleSubmit} className="auth-form">
           {error && <div className="error-message">{error}</div>}
+          }
           
           <div className="form-group">
             <label htmlFor="name">Full Name</label>
