@@ -47,7 +47,6 @@ const Login = () => {
         
         <form onSubmit={handleSubmit} className="auth-form">
           {error && <div className="error-message">{error}</div>}
-          }
           
           <div className="form-group">
             <label htmlFor="email">Email</label>
