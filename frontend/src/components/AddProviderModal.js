@@ -85,6 +85,7 @@ const AddProviderModal = ({ isOpen, onClose, onSubmit }) => {
         
         <form onSubmit={handleSubmit} className="provider-form">
           {error && <div className="error-message">{error}</div>}
+          }
           
           <div className="form-row">
             <div className="form-group">
